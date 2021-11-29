@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="dcterms.rights" content="IE=edge">
+    <meta name="author" content="The Gamer's Guide to Coding">
+    <title>Number Guess - Lesson 1</title>
+    <style>
+        p {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        input{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.1em;
+        }
+
+        #guess {
+            border: indigo 2px solid;
+            border-radius: 5px;
+            width: 100px;
+            text-align: center;
+        }
+
+        #btn {
+            background-color: lawngreen;
+            border: indigo 2px solid;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Visible Page -->
+
+    <p id='prompt'>I'm thinking of a number from 1 to 10. Can you guess it?</p>
+    <input id="guess" type="text" value="" placeholder="Guess here!" />
+    <input id='btn'type="button" value="Guess" onclick="numberGuess();" />
+
+    <!-- Javascript code placed at the end of <body> element -->
+<script>
+    function numberGuess() {
+        let randomNumber = Math.floor((Math.random() * 10) + 1);  //generates a number from  1 to 10
+        let yourGuess = document.getElementById('guess');
+        
+
+        if(yourGuess.value === randomNumber) {
+            document.getElementById('prompt').innerHTML = 'That is correct!';
+        } else {
+            document.getElementById('prompt').innerHTML = `Sorry, the number was ${randomNumber}!`;
+        }
+    }
+
+</script>
+
+</body>
+</html>
